@@ -1,0 +1,43 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+
+
+<section>
+  <div class="container">
+      <table class="table mt-5">
+          <thead>
+              <tr>
+                  <th>Item</td>
+                  <th>Title</td>
+                  <th>Price</th>
+                  <th>Quantity</td>
+              </tr>
+          </thead>
+          <tbody>
+              {% for product in products %}
+              <tr>
+                  <td><img style="width: 110px;height: 70px;" src="{{ product.image }}" alt=""></td>
+                  <td>{{product.name}}</td> 
+                  <td>Rs.{{product.price}}</td>
+                  <td>
+                      <button name="btnp" class="cart-items-count mr-3" >-</button>
+                      <span id= "">10</span>
+                      <button class="cart-items-count ml-3" >+</button>
+                  </td>
+                  <td>
+                      <a href="" class="btn btn-danger">Remove</a>
+                  </td>
+              {% endfor %}
+              </tr>   
+          </tbody>
+      </table>
+      <hr>
+      <div class="float-right mr-5">
+          <h3 class="float-right mr-5 ">Total: RS. <span id="total">1000</span></h3><br>
+          <a href="/place-order" class="float-right btn btn-success mt-3" style="width: 20%;"><b>Place Order</b></a>
+      </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -14,3 +14,7 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
     #return HttpResponse("<h1>Contact Page</h1>")
+
+def cart(request):
+    products = Product.objects.all()
+    return render(request, 'cart.html',{'products': products})
