@@ -1,0 +1,12 @@
+{% extends 'theme.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1 class="text-center my-3">Register</h1>
+<div class="container w-50">
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy  }}
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}
